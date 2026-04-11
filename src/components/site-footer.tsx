@@ -1,9 +1,22 @@
+"use client";
+
+import { motion, useReducedMotion } from "framer-motion";
+
 import { Separator } from "@/components/ui/separator";
+import { easeOutExpo } from "@/lib/motion";
 import { siteConfig } from "@/content/site";
 
 export function SiteFooter() {
+  const reduce = useReducedMotion();
+
   return (
-    <footer className="border-t border-border/80 bg-card/40">
+    <motion.footer
+      className="border-t border-border/60 bg-card/30 backdrop-blur-sm"
+      initial={reduce ? false : { opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.5, ease: easeOutExpo }}
+    >
       <div className="mx-auto max-w-6xl space-y-8 px-4 py-12 sm:px-6">
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           <div>
@@ -19,14 +32,17 @@ export function SiteFooter() {
             <ul className="mt-2 space-y-1 text-sm">
               <li>
                 <a
-                  className="text-primary hover:underline"
+                  className="text-primary transition-colors hover:text-primary/80 hover:underline"
                   href={`mailto:${siteConfig.email}`}
                 >
                   {siteConfig.email}
                 </a>
               </li>
               <li>
-                <a className="hover:underline" href={`tel:${siteConfig.phoneTel}`}>
+                <a
+                  className="transition-colors hover:text-foreground hover:underline"
+                  href={`tel:${siteConfig.phoneTel}`}
+                >
                   {siteConfig.phoneDisplay}
                 </a>
               </li>
@@ -58,6 +74,6 @@ export function SiteFooter() {
           </p>
         </div>
       </div>
-    </footer>
+    </motion.footer>
   );
 }

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 
+import { AmbientBackground } from "@/components/ambient-background";
 import { siteConfig } from "@/content/site";
 
 import "./globals.css";
@@ -42,6 +43,10 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  icons: {
+    icon: [{ url: "/logo.png", type: "image/png" }],
+    apple: "/logo.png",
+  },
 };
 
 export default function RootLayout({
@@ -52,9 +57,12 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`dark ${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`dark ${geistSans.variable} ${geistMono.variable} h-full scroll-smooth antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="relative min-h-full overflow-x-hidden">
+        <AmbientBackground />
+        <div className="relative z-10 flex min-h-full flex-col">{children}</div>
+      </body>
     </html>
   );
 }

@@ -32,9 +32,18 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
+!.env.example
 
-# vercel
-.vercel
+# wrangler / local secrets
+.dev.vars
+
+# editors & OS
+.idea/
+.vscode/
+Thumbs.db
+
+# turborepo
+.turbo/
 
 # typescript
 *.tsbuildinfo

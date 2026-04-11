@@ -1,36 +1,79 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# fts.gg
 
-## Getting Started
+Marketing site for **FTS LLC** — precision infrastructure, bespoke e-commerce engineering, and the CTRL hosting platform. Built as a static Next.js app for deployment on **Cloudflare Pages**.
 
-First, run the development server:
+## Stack
+
+- [Next.js](https://nextjs.org/) (App Router) with **`output: 'export'`** (static HTML in `out/`)
+- [Tailwind CSS](https://tailwindcss.com/) v4
+- [shadcn/ui](https://ui.shadcn.com/) (Radix primitives + copy-paste components)
+- TypeScript, ESLint
+
+## Prerequisites
+
+- **Node.js** 20.x or newer (see `engines` in [`package.json`](package.json))
+- npm (ships with Node)
+
+## Local development
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000). Edit copy in [`src/content/site.ts`](src/content/site.ts) and sections under [`src/components/`](src/components/).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Production build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+```
 
-## Learn More
+Static files are written to **`out/`** (not `.next/`). Open `out/index.html` in a browser or serve the folder with any static file server to smoke-test.
 
-To learn more about Next.js, take a look at the following resources:
+## Deploy to Cloudflare Pages
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Option A — Git integration (recommended)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. In the [Cloudflare dashboard](https://dash.cloudflare.com/), open **Workers & Pages** → **Create** → **Pages** → **Connect to Git**.
+2. Select this repository and the production branch (e.g. `main`).
+3. Configure the build:
 
-## Deploy on Vercel
+   | Setting | Value |
+   |--------|--------|
+   | **Framework preset** | None, or Next.js if offered (we use static export, not Node SSR) |
+   | **Build command** | `npm run build` |
+   | **Build output directory** | `out` |
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+4. Save and deploy. Future pushes to the connected branch trigger new builds.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Option B — Wrangler CLI
+
+1. Install the [Wrangler CLI](https://developers.cloudflare.com/workers/wrangler/install-and-update/) (or use `npx` without a global install).
+2. Log in: `npx wrangler login`
+3. From the project root, after a successful `npm run build`:
+
+   ```bash
+   npx wrangler pages deploy out --project-name YOUR_PROJECT_NAME
+   ```
+
+   Add `--branch main` (or your branch name) if you use [branch previews](https://developers.cloudflare.com/pages/platform/branch-deployment/).
+
+### Custom domain (fts.gg)
+
+1. In your Pages project: **Custom domains** → **Set up a domain** → enter `fts.gg` (and `www` if desired).
+2. Follow Cloudflare’s DNS instructions. Typically you add a **CNAME** from `fts.gg` (or `www`) to your `*.pages.dev` hostname, or use a Cloudflare-managed zone with the records they suggest.
+3. HTTPS certificates are issued automatically once DNS validates.
+
+## Project layout
+
+| Path | Purpose |
+|------|---------|
+| [`src/app/`](src/app/) | App Router entry, layout metadata, `robots.ts` / `sitemap.ts` |
+| [`src/content/site.ts`](src/content/site.ts) | Site copy and contact constants |
+| [`src/components/marketing/`](src/components/marketing/) | Page sections |
+| [`next.config.ts`](next.config.ts) | Static export + image settings |
+
+## License
+
+Proprietary — FTS LLC. All rights reserved unless otherwise stated.

@@ -118,12 +118,120 @@
   --sidebar-ring: oklch(0.556 0 0);
 }
 
+/* Mac Pro–style ambient layer (see AmbientBackground) */
+.ambient-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  will-change: transform;
+  opacity: 0.95;
+}
+
+.ambient-blob-a {
+  width: min(110vw, 780px);
+  height: min(110vw, 780px);
+  left: -18%;
+  top: -22%;
+  background: radial-gradient(
+    circle at 35% 42%,
+    oklch(0.42 0.11 210 / 0.26),
+    transparent 70%
+  );
+  animation: ambient-drift-a 58s ease-in-out infinite alternate;
+}
+
+.ambient-blob-b {
+  width: min(95vw, 620px);
+  height: min(95vw, 620px);
+  right: -12%;
+  top: 15%;
+  background: radial-gradient(
+    circle at 60% 35%,
+    oklch(0.38 0.06 265 / 0.2),
+    transparent 72%
+  );
+  animation: ambient-drift-b 72s ease-in-out infinite alternate;
+}
+
+.ambient-blob-c {
+  width: min(85vw, 520px);
+  height: min(85vw, 520px);
+  left: 20%;
+  bottom: -25%;
+  background: radial-gradient(
+    circle at 50% 50%,
+    oklch(0.48 0.09 195 / 0.14),
+    transparent 75%
+  );
+  animation: ambient-drift-c 64s ease-in-out infinite alternate;
+}
+
+.ambient-sheen {
+  position: absolute;
+  inset: -120%;
+  background: conic-gradient(
+    from 200deg at 50% 45%,
+    transparent 0deg,
+    oklch(0.72 0.06 200 / 0.055) 32deg,
+    transparent 64deg,
+    transparent 360deg
+  );
+  animation: ambient-sheen-spin 150s linear infinite;
+  opacity: 0.45;
+}
+
+@keyframes ambient-drift-a {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  100% {
+    transform: translate(14%, 10%) scale(1.09);
+  }
+}
+
+@keyframes ambient-drift-b {
+  0% {
+    transform: translate(0, 0) scale(1.02);
+  }
+  100% {
+    transform: translate(-10%, 14%) scale(1);
+  }
+}
+
+@keyframes ambient-drift-c {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  100% {
+    transform: translate(-6%, -12%) scale(1.07);
+  }
+}
+
+@keyframes ambient-sheen-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ambient-blob-a,
+  .ambient-blob-b,
+  .ambient-blob-c,
+  .ambient-sheen {
+    animation: none !important;
+  }
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply text-foreground;
+    background-color: oklch(0.052 0.014 264);
   }
   html {
     @apply font-sans;

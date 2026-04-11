@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { MotionInViewCard } from "@/components/motion-primitives";
 import { contactContent, siteConfig } from "@/content/site";
 
 export function ContactSection() {
@@ -9,7 +10,7 @@ export function ContactSection() {
       aria-labelledby="contact-heading"
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <div className="rounded-2xl border border-border/80 bg-gradient-to-br from-card/80 to-card/40 p-8 sm:p-12">
+        <MotionInViewCard className="rounded-2xl border border-border/60 bg-gradient-to-br from-card/85 to-card/35 p-8 shadow-[0_24px_80px_-32px_oklch(0.2_0.08_260/0.5)] backdrop-blur-sm transition duration-500 hover:border-primary/25 sm:p-12">
           <h2
             id="contact-heading"
             className="font-heading text-3xl font-semibold tracking-tight sm:text-4xl"
@@ -20,7 +21,7 @@ export function ContactSection() {
             {contactContent.subtitle}
           </p>
           <dl className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            <div>
+            <div className="transition-transform duration-300 hover:translate-x-0.5">
               <dt className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
                 Support &amp; engineering
               </dt>
@@ -33,7 +34,7 @@ export function ContactSection() {
                 </a>
               </dd>
             </div>
-            <div>
+            <div className="transition-transform duration-300 hover:translate-x-0.5">
               <dt className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
                 Business line
               </dt>
@@ -46,7 +47,7 @@ export function ContactSection() {
                 </a>
               </dd>
             </div>
-            <div className="sm:col-span-2 lg:col-span-1">
+            <div className="transition-transform duration-300 hover:translate-x-0.5 sm:col-span-2 lg:col-span-1">
               <dt className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
                 Headquarters
               </dt>
@@ -54,16 +55,21 @@ export function ContactSection() {
             </div>
           </dl>
           <div className="mt-10 flex flex-wrap gap-4">
-            <Button size="lg" asChild>
+            <Button size="lg" asChild className="transition-transform duration-200 hover:scale-[1.02] active:scale-[0.98]">
               <a href={`mailto:${siteConfig.email}?subject=Project%20inquiry`}>
                 Email the team
               </a>
             </Button>
-            <Button size="lg" variant="outline" asChild>
+            <Button
+              size="lg"
+              variant="outline"
+              asChild
+              className="transition-transform duration-200 hover:scale-[1.02] active:scale-[0.98]"
+            >
               <a href={`tel:${siteConfig.phoneTel}`}>Call {siteConfig.phoneDisplay}</a>
             </Button>
           </div>
-        </div>
+        </MotionInViewCard>
       </div>
     </section>
   );

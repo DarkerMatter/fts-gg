@@ -1,10 +1,11 @@
+import { MotionSection } from "@/components/motion-primitives";
 import { missionContent } from "@/content/site";
 
 export function MissionSection() {
   return (
-    <section
+    <MotionSection
       id="mission"
-      className="scroll-mt-24 border-b border-border/60 py-20 sm:py-24"
+      className="scroll-mt-24 border-b border-border/40 py-20 sm:py-24"
       aria-labelledby="mission-heading"
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
@@ -22,6 +23,6 @@ export function MissionSection() {
           ))}
         </div>
       </div>
-    </section>
+    </MotionSection>
   );
 }
