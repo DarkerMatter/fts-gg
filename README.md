@@ -76,4 +76,4 @@ Static files are written to **`out/`** (not `.next/`). Open `out/index.html` in 
 
 ## License
 
-['LICENSE'](License)
+[LICENSE](License)
