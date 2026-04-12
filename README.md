@@ -76,4 +76,4 @@ Static files are written to **`out/`** (not `.next/`). Open `out/index.html` in 
 
 ## License
 
-Proprietary — FTS LLC. All rights reserved unless otherwise stated.
+['LICENSE'](License)
