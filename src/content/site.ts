@@ -20,6 +20,7 @@ export const navItems = [
   { label: "Capabilities", href: "#capabilities" },
   { label: "CTRL", href: "#ctrl" },
   { label: "Advantage", href: "#advantage" },
+  { label: "Founder", href: "#founder" },
   { label: "Contact", href: "#contact" },
 ] as const;
 
@@ -87,3 +88,20 @@ export const contactContent = {
   subtitle:
     "Whether you need a resilient hosting foundation or a storefront built for scale, we are here to help.",
 };
+
+export const founderContent = {
+  eyebrow: "Founder",
+  title: "The person behind FTS",
+  name: "Dimitri Shepherd",
+  role: "Founder & Owner",
+  bio: "When your initials are DNS, you were always going to end up in tech.",
+  image: {
+    src: "/dimitri.png",
+    alt: "Portrait of Dimitri Shepherd",
+  },
+  links: [
+    { label: "dimitri.one", href: "https://dimitri.one", icon: "globe", external: true },
+    { label: "github.com/DarkerMatter", href: "https://github.com/DarkerMatter", icon: "github", external: true },
+    { label: "support@fts.gg", href: "mailto:support@fts.gg", icon: "mail", external: false },
+  ],
+} as const;
