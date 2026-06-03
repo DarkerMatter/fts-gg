@@ -100,8 +100,23 @@ export const founderContent = {
     alt: "Portrait of Dimitri Shepherd",
   },
   links: [
-    { label: "dimitri.one", href: "https://dimitri.one", icon: "globe", external: true },
-    { label: "github.com/DarkerMatter", href: "https://github.com/DarkerMatter", icon: "github", external: true },
-    { label: "support@fts.gg", href: "mailto:support@fts.gg", icon: "mail", external: false },
+    {
+      label: "dimitri.one",
+      href: "https://dimitri.one",
+      icon: "globe",
+      external: true,
+    },
+    {
+      label: "github.com/DarkerMatter",
+      href: "https://github.com/DarkerMatter",
+      icon: "github",
+      external: true,
+    },
+    {
+      label: "support@fts.gg",
+      href: "mailto:support@fts.gg",
+      icon: "mail",
+      external: false,
+    },
   ],
 } as const;
