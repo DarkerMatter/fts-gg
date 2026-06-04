@@ -52,3 +52,11 @@ AGENTS.md
 CLAUDE.md
 .superpowers/
 /docs
+
+# OpenNext
+.open-next
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
