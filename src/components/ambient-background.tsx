@@ -12,14 +12,14 @@ export function AmbientBackground() {
       aria-hidden
       className="pointer-events-none fixed inset-0 z-0 overflow-hidden"
     >
-      {/* Richer than flat black — nebula wash */}
+      {/* Richer than flat black - nebula wash */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_120%_80%_at_50%_-20%,oklch(0.14_0.06_250)_0%,oklch(0.045_0.03_264)_45%,oklch(0.035_0.02_270)_100%)]" />
 
       <div className="absolute inset-0 opacity-90">
         <Starfield />
       </div>
 
-      {/* Soft chroma pools — toned so stars stay visible */}
+      {/* Soft chroma pools - toned so stars stay visible */}
       <div className="ambient-blob ambient-blob-a opacity-70" />
       <div className="ambient-blob ambient-blob-b opacity-55" />
       <div className="ambient-blob ambient-blob-c opacity-50" />

@@ -27,7 +27,7 @@ export const navItems = [
 export const heroContent = {
   headline: "Infrastructure that stays online when it matters",
   subhead:
-    "FTS LLC is a specialized software development and managed infrastructure firm based in Nevada. We bridge enterprise-grade cloud hosting and everyday developer needs — from high-traffic retail drops to your first production deploy.",
+    "FTS LLC is a specialized software development and managed infrastructure firm based in Nevada. We bridge enterprise-grade cloud hosting and everyday developer needs - from high-traffic retail drops to your first production deploy.",
   cta: "Talk to engineering",
 };
 
@@ -44,7 +44,7 @@ export const capabilitiesContent = {
   ecommerce: {
     title: "Bespoke e-commerce engineering",
     description:
-      "Premium, mobile-first storefronts tailored for high-volume sales — not sluggish template sites.",
+      "Premium, mobile-first storefronts tailored for high-volume sales - not sluggish template sites.",
     bullets: [
       "Custom Shopify themes and bespoke front-ends tuned for sub-1.5s load times",
       "Brand-led UX so your digital presence matches the quality of what you sell",
@@ -68,7 +68,7 @@ export const advantageContent = {
     {
       title: "Predictable economics",
       description:
-        "Fixed-tier pricing so you know what infrastructure costs every month — no surprise cloud invoices.",
+        "Fixed-tier pricing so you know what infrastructure costs every month - no surprise cloud invoices.",
     },
     {
       title: "Resilience by default",

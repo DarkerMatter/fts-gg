@@ -29,13 +29,13 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: siteConfig.url,
     siteName: siteConfig.name,
-    title: `${siteConfig.name} — ${siteConfig.tagline}`,
+    title: `${siteConfig.name} - ${siteConfig.tagline}`,
     description:
       "Precision infrastructure, bespoke storefronts, and the CTRL orchestration platform. Veteran-owned. Based in Reno, Nevada.",
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteConfig.name} — ${siteConfig.tagline}`,
+    title: `${siteConfig.name} - ${siteConfig.tagline}`,
     description:
       "Enterprise-grade hosting and custom e-commerce engineering. Predictable pricing. Resilience by default.",
   },

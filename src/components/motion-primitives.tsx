@@ -51,7 +51,7 @@ export function FadeItem({ children, className, ...props }: DivProps) {
   );
 }
 
-/** Prominent panel (e.g. contact CTA) — scale + fade on scroll */
+/** Prominent panel (e.g. contact CTA) - scale + fade on scroll */
 export function MotionInViewCard({ children, className }: DivProps) {
   const reduce = useReducedMotion();
 

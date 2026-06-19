@@ -1,6 +1,6 @@
 # fts.gg
 
-Marketing site for **FTS LLC** — precision infrastructure, bespoke e-commerce engineering, and the CTRL hosting platform. Built as a static Next.js app for deployment on **Cloudflare Pages**.
+Marketing site for **FTS LLC** - precision infrastructure, bespoke e-commerce engineering, and the CTRL hosting platform. Built as a static Next.js app for deployment on **Cloudflare Pages**.
 
 ## Stack
 
@@ -33,7 +33,7 @@ Static files are written to **`out/`** (not `.next/`). Open `out/index.html` in 
 
 ## Deploy to Cloudflare Pages
 
-### Option A — Git integration (recommended)
+### Option A - Git integration (recommended)
 
 1. In the [Cloudflare dashboard](https://dash.cloudflare.com/), open **Workers & Pages** → **Create** → **Pages** → **Connect to Git**.
 2. Select this repository and the production branch (e.g. `main`).
@@ -47,7 +47,7 @@ Static files are written to **`out/`** (not `.next/`). Open `out/index.html` in 
 
 4. Save and deploy. Future pushes to the connected branch trigger new builds.
 
-### Option B — Wrangler CLI
+### Option B - Wrangler CLI
 
 1. Install the [Wrangler CLI](https://developers.cloudflare.com/workers/wrangler/install-and-update/) (or use `npx` without a global install).
 2. Log in: `npx wrangler login`

@@ -35,7 +35,7 @@ export function HeroSection() {
       className="relative overflow-hidden border-b border-border/40"
       aria-labelledby="hero-heading"
     >
-      {/* Local rim light — sits on top of global ambient */}
+      {/* Local rim light - sits on top of global ambient */}
       <div
         className="pointer-events-none absolute inset-0 opacity-50"
         aria-hidden
